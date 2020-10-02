@@ -6,3 +6,9 @@ html{
     align-items: center;
     display: flex
 };
+
+.selectMoeda{
+    width: 100%!important;
+    background-color: transparent!important;
+    border: solid #fff 2px!important;
+}

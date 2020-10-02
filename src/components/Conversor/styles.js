@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Title = styled.h2`
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
     font-size: 35px;
 `;

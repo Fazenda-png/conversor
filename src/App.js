@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Conversor from "./components/Conversor/index";
+import Header from "./components/Header/index";
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
   return (
     <div className="App">
 
-      <select value={selecionarMoeada} onChange={e => setselecionarMoeda(e.target.value)}>
+      <Header></Header>
+
+      <select className="selectMoeda" value={selecionarMoeada} onChange={e => setselecionarMoeda(e.target.value)}>
         {list.map((item, index) => (
           <option value={item.name}>{item.name}</option>
         ))}
