@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Conversor from "./components/Conversor/index";
 
 function App() {
-    return (
-      <div className="App">
-        <Conversor moedaA="USD" moedaB="BRL">
 
-        </Conversor>
-      </div>
-    );
-  }
+  const [selecionarMoeada, setselecionarMoeda] = useState("USD")
+  const list = [
+    { id: 1, name: "USD" },
+    { id: 2, name: "PHP" },
+    { id: 3, name: "SVC" },
+    { id: 4, name: "SPH" },
+  ]
+  return (
+    <div className="App">
+
+      <select value={selecionarMoeada} onChange={e => setselecionarMoeda(e.target.value)}>
+        {list.map((item, index) => (
+          <option value={item.name}>{item.name}</option>
+        ))}
+      </select>
+
+      <Conversor moedaA={selecionarMoeada} moedaB="BRL">
+
+      </Conversor>
+    </div>
+  );
+}
 
 export default App;
